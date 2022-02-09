@@ -16,6 +16,9 @@ limitations under the License.
 
 #pragma once
 
+#include <string>
+#include <list>
+
 namespace falco {
 namespace app {
 
@@ -67,7 +70,7 @@ public:
 		bool success;
 
 		// If success==false, details on the error.
-		bool errstr;
+		std::string errstr;
 
 		// If true, subsequent actions should be performed. If
 		// false, subsequent actions should *not* be performed
@@ -89,7 +92,7 @@ public:
 	// Initialize any state in the application that might be
 	// shared with other components. This might include creating
 	// inspectors, falco engines, etc.
-	virtual void init(application &app) = 0;
+	virtual void init();
 
 	// Destroy any state created in init()
 	virtual void deinit();
@@ -98,7 +101,7 @@ public:
 	// in application. For example, an action "print help and
 	// exit" should return true if the command line option --help
 	// was specified, false otherwise.
-	virtual bool should_run(application &app) = 0;
+	virtual bool should_run();
 
 	// Perform the action. The returned run_result holds the
 	// result of the action and whether later actions should

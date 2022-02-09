@@ -17,6 +17,7 @@ set(
   FALCO_SOURCES
   application.cpp
   app_cmdline_options.cpp
+  app_action.cpp
   configuration.cpp
   logger.cpp
   falco_outputs.cpp
