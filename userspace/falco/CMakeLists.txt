@@ -18,6 +18,7 @@ set(
   application.cpp
   app_cmdline_options.cpp
   app_action.cpp
+  app_action_manager.cpp
   configuration.cpp
   logger.cpp
   falco_outputs.cpp
